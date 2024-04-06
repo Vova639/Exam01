@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveNation - Інтернет-магазин автомобілів</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Хедер з логотипом і меню -->
+  <header>
+    <div class="container">
+      <div class="logo"><a href="index.html"><button><b>DriveNation</b></button></a></div>
+      <nav>
+        <ul>
+          <li><a href="t1.html">Спортивні автомобілі</a></li>
+          <li><a href="t2.html">Сімейні автомобілі</a></li>
+          <li><a href="t3.html">Кросовери</a></li>
+          <li><a href="t4.html">Електромобілі</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="search-bar">
+    <div class="container">
+      <input type="text" placeholder="Пошук автомобілів...">
+      <button>Пошук</button>
+    </div>
+  </div>
+
+
+  <div class="product-container">
+
+    <div class="container mt-4">
+
+      <div class="row">
+
+        <div class="col-md-2 mb-4">
+          <div class="product-card">
+            <img
+              src="https://static.wikia.nocookie.net/gran-turismo/images/4/49/Ferrari_F8_Tributo_%2719.jpg/revision/latest?cb=20220316151358"
+              alt="Product 1">
+            <h3>ferrari f8 tributo gran turismo</h3>
+            <p>349 900 €</p>
+            <button>Купити</button>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <div class="product-card">
+            <img
+              src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmWBisGK7Zlp0KtYYF%25mVSW8uAVbsqYStvh0iO5M3tCvNzxHGDGXoq1k53r6FObO5dwRuT0vq9x7e2HRes1UzQKmVJbsqYS4TV0iO5MjAUHcTCkaEAKf2GLoWJSPvs1uLZws4ZoPOdHe0DkrHhNycQeufIsm"
+              alt="Product 1">
+            <h3>porsche 911 gt3 rs</h3>
+            <p>315 681 €</p>
+            <button>Купити</button>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <div class="product-card">
+            <img
+              src="https://medialamborghini-meride-tv.akamaized.net/meride/lamborghini/video/images/folder1/1252/vlcsnap-2023-03-17-16h18m30s840.jpg"
+              alt="Product 1">
+            <h3>lamborghini revuelto</h3>
+            <p>630 000 €</p>
+            <button>Купити</button>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <div class="product-card">
+            <img
+              src="https://www.bmw.pt/content/dam/bmw/common/all-models/m-series/series-overview/bmw-m-series-seo-overview-ms-05.jpg"
+              alt="Product 1">
+            <h3>bmw m</h3>
+            <p>25 000 €</p>
+            <button>Купити</button>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4">
+          <div class="product-card">
+            <img
+              src="https://www.razaoautomovel.com/wp-content/uploads/2022/10/2023-Audi-Audi-R8-V10-GT-RWD-27_925x520_acf_cropped.jpeg"
+              alt="Product 1">
+            <h3>audi r8</h3>
+            <p>180 000 €</p>
+            <button>Купити</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; DriveNation. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <!-- Добавляем скрипт для поиска -->
+<script>
+  function search() {
+    // Получаем текст из поля ввода поиска
+    var searchText = document.querySelector(".search-bar input[type='text']").value.toLowerCase();
+    
+    // Получаем все карточки товаров
+    var productCards = document.querySelectorAll(".product-card");
+
+    // Проходим по каждой карточке товара
+    productCards.forEach(function(card) {
+      // Получаем текст из заголовка карточки (названия товара)
+      var title = card.querySelector("h3").textContent.toLowerCase();
+
+      // Проверяем, содержит ли текст заголовка карточки введенный текст поиска
+      if (title.includes(searchText)) {
+        // Если содержит, показываем карточку товара
+        card.style.display = "block";
+      } else {
+        // Если не содержит, скрываем карточку товара
+        card.style.display = "none";
+      }
+    });
+
+    // Очищаем поле ввода поиска
+    document.querySelector(".search-bar input[type='text']").value = "";
+  }
+</script>
+
+</body>
+
+</html>
